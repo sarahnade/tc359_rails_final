@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :bands
+
   root 'static#home'
   get 'about' => 'static#about'
   get '/cat-pictures(/:number_of_cats)' => 'static#cats', as: :cat_pictures

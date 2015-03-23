@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @band.name %>
+</p>
+
+<p>
+  <strong>Musicians:</strong>
+  <%= @band.musicians %>
+</p>
+
+<p>
+  <strong>Website:</strong>
+  <%= @band.website %>
+</p>
+
+<p>
+  <strong>Currently together:</strong>
+  <%= @band.currently_together %>
+</p>
+
+<%= link_to 'Edit', edit_band_path(@band) %> |
+<%= link_to 'Back', bands_path %>
