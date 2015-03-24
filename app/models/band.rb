@@ -1,5 +1,6 @@
 class Band < ActiveRecord::Base
   validates_presence_of :name, :musicians
+  validates :musicians, :inclusion => { :in => 1..50, :message => "number must be between 1 and 50" }
   before_validation :format_website
   validate :valid_website
 
