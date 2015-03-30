@@ -20,9 +20,13 @@
         <td><%= band.musicians %></td>
         <td><%= band.website %></td>
         <td><%= band.currently_together %></td>
-        <td><%= link_to 'Show', band %></td>
-        <td><%= link_to 'Edit', edit_band_path(band) %></td>
-        <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% if user_signed_in? %>
+          <td><%= link_to 'Show', band %></td>
+          <td><%= link_to 'Edit', edit_band_path(band) %></td>
+          <td><%= link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <% else %>
+          <td><%= link_to 'Show', band %></td>
+        <% end %>
       </tr>
     <% end %>
   </tbody>
@@ -30,4 +34,7 @@
 
 <br>
 
-<%= link_to 'New Band', new_band_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Band', new_band_path %>
+<% else %>
+<% end %>

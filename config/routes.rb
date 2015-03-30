@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+
+  get '/sign-in' => 'sessions#new'
+  delete '/sign-out' => 'sessions#destroy'
+
   resources :bands
 
   root 'static#home'
