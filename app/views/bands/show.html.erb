@@ -19,6 +19,9 @@
   <strong>Currently together:</strong>
   <%= @band.currently_together %>
 </p>
-
-<%= link_to 'Edit', edit_band_path(@band) %> |
-<%= link_to 'Back', bands_path %>
+<% if user_signed_in? %>
+  <%= link_to 'Edit', edit_band_path(@band) %> |
+  <%= link_to 'Back', bands_path %>
+<% else %>
+  <%= link_to 'Back', bands_path %>
+<% end %>
