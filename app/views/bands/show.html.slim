@@ -1,0 +1,23 @@
+p id="notice" #{notice}
+
+p
+  strong Name:
+  =< @band.name
+
+p
+  strong Musicians:
+  =< @band.musicians
+
+p
+  strong Website:
+  =< @band.website
+
+p
+  strong Currently together:
+  =< @band.currently_together
+
+- if user_signed_in?
+  => link_to 'Edit', edit_band_path(@band)
+  = link_to 'Back', bands_path
+- else
+  = link_to 'Back', bands_path

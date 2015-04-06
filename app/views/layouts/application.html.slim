@@ -1,0 +1,27 @@
+doctype html
+html
+  head
+    title MyNewApp
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+  body
+    #nav
+      ul
+        li = link_to 'Home', root_path
+        li = link_to 'About', about_path
+        li = link_to 'Cat Pictures', cat_pictures_path
+        li = link_to 'Band Directory', bands_path
+
+        - if user_signed_in?
+          li Signed in in as #{current_user.email}
+          li = link_to "Sign Out", sign_out_path, method: :delete
+        - else
+          li = link_to "Sign In", sign_in_path
+
+    - flash.each do |type, message|
+      div class="#{type}"
+        p #{message}
+
+    == yield
