@@ -25,6 +25,8 @@ table
           td = link_to 'Destroy', band, method: :delete, data: { confirm: 'Are you sure?' }
         - else
           td = link_to 'Show', band
+br
+= will_paginate @bands
 
 br
 

@@ -7,7 +7,9 @@ class BandsController < ApplicationController
   # GET /bands.json
   def index
     @bands = Band.all
+    @bands = Band.paginate(:page => params[:page], :per_page => 5)
   end
+
 
   # GET /bands/1
   # GET /bands/1.json
