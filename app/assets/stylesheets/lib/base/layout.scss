@@ -1,0 +1,19 @@
+body {
+  background-color: $background-color;
+  color: $main-font-color;
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size: $font-size;
+  line-height: 18px;
+  text-align: center;
+
+  p {
+    font-size: $font-size;
+  }
+
+  a {
+    color: $main-font-color;
+    &:hover {
+      color: #95a5a6;
+    }
+  }
+}

@@ -10,9 +10,10 @@
  * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
  * file per style scope.
  *
- *= require_tree .
  *= require_self
  */
-@import 'lib/bands.scss';
-@import 'lib/scaffolds.scss';
-@import 'lib/static.scss';
+@import 'lib/base/variables.scss';
+@import 'lib/base/layout.scss';
+@import 'lib/components/navigation.scss';
+@import 'lib/components/table.scss';
+@import 'lib/components/scaffolds.scss';
